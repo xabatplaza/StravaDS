@@ -5,6 +5,9 @@ import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+
+import ParteUsuario.usuario;
+
 import javax.swing.JButton;
 
 public class registrarse {
@@ -18,6 +21,7 @@ public class registrarse {
 	private JTextField tFrecCardReposo;
 	private JTextField tContrasenya;
 	private JTextField tRepetirContrasenya;
+	usuario usuario;
 	/**
 	 * Create the application.
 	 */
@@ -33,6 +37,8 @@ public class registrarse {
 		frame.setBounds(100, 100, 682, 569);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		
+		usuario = new usuario();
 		
 		JLabel lNombre = new JLabel("Nombre:");
 		lNombre.setBounds(37, 44, 184, 25);
@@ -119,12 +125,26 @@ public class registrarse {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				if(tNombre.getText()!="") {
+				if (tContrasenya.getText().equals(tRepetirContrasenya.getText())) {
+					usuario.setNombre(tNombre.getText());
+					usuario.setEmail(tEmail.getText());
+					usuario.setContrasenya(tContrasenya.getText());
+					Integer peso = Integer.parseInt(tPeso.getText());
+					float fPeso = peso.floatValue();
+					usuario.setPeso(fPeso);
+					Integer altura = Integer.parseInt(tAltura.getText());
+					float fAltura = altura.floatValue();
+					usuario.setAltura(fAltura);
+					usuario.setFrecCardMax(Integer.parseInt(tFrecCardMax.getText()));
+					usuario.setFrecCardRepo(Integer.parseInt(tFrecCardReposo.getText()));
+					System.out.println(usuario.toString());
 					new Principal();
 					frame.dispose();
 				}else {
-					System.out.println("Rellena todo");
+					System.out.println("Error. La contraseña no es igual");
 				}
+
+				
 			}
 		});
 		

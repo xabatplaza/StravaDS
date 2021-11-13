@@ -70,10 +70,19 @@ public class login {
 		JButton btnIniciarSesion = new JButton("Iniciar Sesión");
 		btnIniciarSesion.setBounds(75, 247, 146, 23);
 		frame.getContentPane().add(btnIniciarSesion);
+		btnIniciarSesion.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
 		
 		btnIniciarGoogle = new JButton("Iniciar sesión con Google");
 		btnIniciarGoogle.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 			}
 		});
 		btnIniciarGoogle.setBounds(273, 225, 196, 23);
