@@ -1,10 +1,11 @@
 package window;
 import java.awt.EventQueue;
+import java.awt.Image;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
-
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
@@ -12,6 +13,8 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
+import javax.swing.JPanel;
 
 public class login {
 
@@ -25,6 +28,8 @@ public class login {
 	String line;
 	String emailContra;
 	public boolean log;
+	private JPanel panel;
+	private JLabel lblNewLabel_1;
 
 	/**
 	 * Launch the application.
@@ -54,6 +59,7 @@ public class login {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.getContentPane().setBackground(new Color(255, 102, 0));
 		frame.setBounds(100, 100, 562, 419);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
@@ -76,7 +82,8 @@ public class login {
 		frame.getContentPane().add(tContrasenya);
 		
 		JButton btnIniciarSesion = new JButton("Iniciar Sesión");
-		btnIniciarSesion.setBounds(75, 247, 146, 23);
+		btnIniciarSesion.setIcon(null);
+		btnIniciarSesion.setBounds(299, 242, 146, 23);
 		frame.getContentPane().add(btnIniciarSesion);
 		
 		btnIniciarSesion.addActionListener(new ActionListener() {
@@ -96,16 +103,33 @@ public class login {
 				
 			}
 		});
-		btnIniciarGoogle.setBounds(273, 225, 196, 23);
+		btnIniciarGoogle.setBounds(273, 276, 196, 23);
 		frame.getContentPane().add(btnIniciarGoogle);
 		
 		btnIniciarFacebook = new JButton("Iniciar sesión con Facebook");
-		btnIniciarFacebook.setBounds(273, 272, 196, 23);
+		btnIniciarFacebook.setBounds(273, 310, 196, 23);
 		frame.getContentPane().add(btnIniciarFacebook);
 		
+		panel = new JPanel();
+		panel.setBounds(75, 276, 162, 23);
+		frame.getContentPane().add(panel);
+		panel.setLayout(null);
+		
 		btnRegistrarse = new JButton("Registrarse");
-		btnRegistrarse.setBounds(376, 344, 162, 23);
-		frame.getContentPane().add(btnRegistrarse);
+		btnRegistrarse.setBounds(0, 0, 162, 23);
+		panel.add(btnRegistrarse);
+		
+//		JLabel lblNewLabel = new JLabel("");
+//		Image img = new ImageIcon(this.getClass().getResource("/strava.jpg")).getImage();
+//		lblNewLabel.setIcon(new ImageIcon(img));
+//		lblNewLabel.setBounds(69, 11, 400, 358);
+//		frame.getContentPane().add(lblNewLabel);
+//		
+//		lblNewLabel_1 = new JLabel("");
+//		Image img1 = new ImageIcon(this.getClass().getResource("/iconoStrava.png")).getImage();
+//		lblNewLabel_1.setIcon(new ImageIcon(img1));
+//		lblNewLabel_1.setBounds(10, 11, 60, 60);
+//		frame.getContentPane().add(lblNewLabel_1);
 		btnRegistrarse.addActionListener(new ActionListener() {
 			
 			@Override

@@ -1,5 +1,6 @@
 package window;
 import java.awt.EventQueue;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -14,6 +15,7 @@ import javax.swing.JTextField;
 
 import ParteUsuario.usuario;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 public class registrarse {
@@ -31,6 +33,7 @@ public class registrarse {
 	File file;
 	FileWriter fw;
 	PrintWriter pw;
+	private JTextField textField;
 	/**
 	 * Create the application.
 	 */
@@ -49,50 +52,50 @@ public class registrarse {
 		
 		file = new File("usuarios.txt");
 		try {
-			fw = new FileWriter(file,true);
+			fw = new FileWriter(file, true);
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		pw = new PrintWriter(fw);
 		JLabel lNombre = new JLabel("Nombre:");
-		lNombre.setBounds(37, 44, 184, 25);
+		lNombre.setBounds(37, 74, 184, 25);
 		frame.getContentPane().add(lNombre);
 		
 		tNombre = new JTextField();
-		tNombre.setBounds(35, 82, 171, 25);
+		tNombre.setBounds(37, 110, 171, 25);
 		frame.getContentPane().add(tNombre);
 		tNombre.setColumns(10);
 		
 		JLabel lEmail = new JLabel("Email:");
-		lEmail.setBounds(39, 121, 184, 25);
+		lEmail.setBounds(37, 146, 184, 25);
 		frame.getContentPane().add(lEmail);
 		
 		tEmail = new JTextField();
 		tEmail.setColumns(10);
-		tEmail.setBounds(37, 159, 171, 25);
+		tEmail.setBounds(37, 182, 171, 25);
 		frame.getContentPane().add(tEmail);
 		
-		JLabel lFechaNac = new JLabel("Fecha de Nacimiento:");
-		lFechaNac.setBounds(37, 208, 184, 25);
+		JLabel lFechaNac = new JLabel("Fecha de Nacimiento: (dd/MM/aaaa)");
+		lFechaNac.setBounds(37, 233, 184, 25);
 		frame.getContentPane().add(lFechaNac);
 		
 		JLabel lPeso = new JLabel("Peso(kg):");
-		lPeso.setBounds(39, 296, 184, 25);
+		lPeso.setBounds(37, 331, 184, 25);
 		frame.getContentPane().add(lPeso);
 		
 		tPeso = new JTextField();
 		tPeso.setColumns(10);
-		tPeso.setBounds(37, 334, 171, 25);
+		tPeso.setBounds(37, 367, 171, 25);
 		frame.getContentPane().add(tPeso);
 		
 		JLabel lAltura = new JLabel("Altura(cm):");
-		lAltura.setBounds(39, 384, 184, 25);
+		lAltura.setBounds(37, 403, 184, 25);
 		frame.getContentPane().add(lAltura);
 		
 		tAltura = new JTextField();
 		tAltura.setColumns(10);
-		tAltura.setBounds(37, 422, 171, 25);
+		tAltura.setBounds(37, 439, 171, 25);
 		frame.getContentPane().add(tAltura);
 		
 		JLabel lFrecCardMax = new JLabel("Frecuencia Cardíaca Máxima:");
@@ -145,6 +148,10 @@ public class registrarse {
 				
 			}
 		});
+		textField = new JTextField();
+		textField.setBounds(37, 269, 171, 25);
+		frame.getContentPane().add(textField);
+		textField.setColumns(10);
 		
 		JButton btnRegisGoogle = new JButton("Registrarse con Google");
 		btnRegisGoogle.setBounds(341, 453, 201, 23);
@@ -153,6 +160,23 @@ public class registrarse {
 		JButton btnRegisFacebook = new JButton("Registrarse con Facebook");
 		btnRegisFacebook.setBounds(341, 498, 201, 23);
 		frame.getContentPane().add(btnRegisFacebook);
+		
+//		JLabel lblNewLabel = new JLabel("");
+//		Image img = new ImageIcon(this.getClass().getResource("/iconoStrava.png")).getImage();
+//		lblNewLabel.setIcon(new ImageIcon(img));
+//		lblNewLabel.setBounds(10, 11, 60, 60);
+//		frame.getContentPane().add(lblNewLabel);
+//		
+//		JLabel lblNewLabel_2 = new JLabel("");
+//		Image img2 = new ImageIcon(this.getClass().getResource("/fondo.png")).getImage();
+//		lblNewLabel_2.setIcon(new ImageIcon(img2));
+//		lblNewLabel_2.setBounds(0, 0, 688, 540);
+//		frame.getContentPane().add(lblNewLabel_2);
+//		
+//		
+//		
+		
+		
 		
 		frame.setDefaultCloseOperation(frame.DISPOSE_ON_CLOSE);
 		frame.setResizable(false);
@@ -174,9 +198,9 @@ public class registrarse {
 			user.setAltura(fAltura);
 			user.setFrecCardMax(Integer.parseInt(tFrecCardMax.getText()));
 			user.setFrecCardRepo(Integer.parseInt(tFrecCardReposo.getText()));
+			user.setFechaNac(textField.getText());
 			System.out.println(user.toString());
-			System.out.println(user.getNombre());
-			pw.println("Nombre: "+user.getNombre()+ " , Email: " + user.getEmail()+ " , Contraseña: "+ user.getContrasenya() +" , Peso: " + user.getPeso()+ " , Altura: "+ user.getAltura()+ " , Frecuencia Cardiaca Maxima: "+ user.getFrecCardMax()+ " , Frecuencia Cardiaca en Reposo: "+ user.getFrecCardRepo());
+			pw.println("Nombre: "+user.getNombre()+ " , Email: " + user.getEmail()+ " , Contraseña: "+ user.getContrasenya() +" , Peso: " + user.getPeso()+ " , Altura: "+ user.getAltura()+ " , Frecuencia Cardiaca Maxima: "+ user.getFrecCardMax()+ " , Frecuencia Cardiaca en Reposo: "+ user.getFrecCardRepo()+" , Fecha de nacimiento: "+user.getFechaNac());
 			pw.flush();
 			pw.close();
 		}else {
@@ -184,7 +208,4 @@ public class registrarse {
 		}
 		return user;
 	}
-	
-	
-
 }

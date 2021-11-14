@@ -4,12 +4,13 @@ public class usuario {
 	String nombre;
 	String email;
 	String contrasenya;
+	String fechaNac;
 	float peso;
 	float altura;
 	int frecCardMax;
 	int frecCardRepo;
 	public usuario(String nombre, String email, String contrasenya, float peso, float altura, int frecCardMax,
-			int frecCardRepo) {
+			int frecCardRepo, String fechaNac) {
 		super();
 		this.nombre = nombre;
 		this.email = email;
@@ -18,6 +19,7 @@ public class usuario {
 		this.altura = altura;
 		this.frecCardMax = frecCardMax;
 		this.frecCardRepo = frecCardRepo;
+		this.fechaNac = fechaNac;
 	}
 	public usuario() {
 		super();
@@ -28,6 +30,7 @@ public class usuario {
 		this.altura = 0;
 		this.frecCardMax = 0;
 		this.frecCardRepo = 0;
+		this.fechaNac = "";
 	}
 	public String getNombre() {
 		return nombre;
@@ -71,10 +74,16 @@ public class usuario {
 	public void setFrecCardRepo(int frecCardRepo) {
 		this.frecCardRepo = frecCardRepo;
 	}
+	public String getFechaNac() {
+		return fechaNac;
+	}
+	public void setFechaNac(String fechaNac) {
+		this.fechaNac = fechaNac;
+	}
 	@Override
 	public String toString() {
 		return "Usuario con el nombre:" + nombre + ", email:" + email + ", contrasenya:" + contrasenya + ", peso:" + peso
-				+ ", altura:" + altura + ", frecCardMax:" + frecCardMax + ", frecCardRepo:" + frecCardRepo;
+				+ ", altura:" + altura + ", frecCardMax:" + frecCardMax + ", frecCardRepo:" + frecCardRepo+ ", FechaNac: "+fechaNac;
 	}
 	
 	
