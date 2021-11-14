@@ -1,19 +1,13 @@
 package window;
 
-import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.beans.PropertyChangeListener;
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.swing.*;
-
-import Servidor.Entrenamiento;
 import Servidor.Reto;
 
 import java.awt.*;
@@ -105,7 +99,8 @@ public class crearReto extends JFrame{
 		 btnSalir.addActionListener(new ActionListener() {
 	            @Override
 	            public void actionPerformed(ActionEvent e) {
-	            	 frame.dispose();
+	            	dispose();
+	            	new Principal();
   
 	            }
 	        });
@@ -131,11 +126,6 @@ public class crearReto extends JFrame{
 		pw.close();
 	return reto;
 }
-	
-	public static void main(String[] args) {
-		crearReto v4 = new crearReto();
-	}
-
 
 	}
 	

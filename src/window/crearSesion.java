@@ -1,7 +1,6 @@
 package window;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -111,7 +110,8 @@ public class crearSesion extends JFrame {
 		 btnSalir.addActionListener(new ActionListener() {
 	            @Override
 	            public void actionPerformed(ActionEvent e) {
-	            	 frame.dispose();
+	            	 dispose();
+	            	 new Principal();
 
 	            }
 	        });
@@ -139,9 +139,6 @@ public class crearSesion extends JFrame {
 		return entrenamiento;
 	}
 	
-	public static void main(String[] args) {
-		crearSesion v3 = new crearSesion();
-	}
 
 	}
 

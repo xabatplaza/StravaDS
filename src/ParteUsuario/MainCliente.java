@@ -20,9 +20,7 @@ public class MainCliente {
 		}
 
 		try {
-			int i =0;
 			BufferedReader br2;
-			String line2 = "";
 			try {
 				br2 = new BufferedReader(new FileReader("usuarios.txt"));			
 				String name = "//" + args[0] + ":" + args[1] + "/" + args[2];

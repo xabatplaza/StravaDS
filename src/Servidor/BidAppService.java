@@ -4,13 +4,9 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.rmi.RemoteException;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.List;
+
 
 import ParteUsuario.usuario;
-import window.Principal;
 
 
 //TODO: Implement Singleton Pattern

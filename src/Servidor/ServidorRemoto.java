@@ -1,7 +1,6 @@
 package Servidor;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.rmi.Naming;
@@ -32,7 +31,6 @@ public class ServidorRemoto extends UnicastRemoteObject implements IServidorRemo
 	private int cont = 0;
 	private Map<Long, usuario> serverState = new HashMap<>();
 	private LoginAppService loginService = new LoginAppService();
-	private BidAppService bidService = new BidAppService();
 
 	public String holaServidor(){
 		cont++;

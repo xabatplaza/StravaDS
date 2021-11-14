@@ -55,17 +55,17 @@ public class Principal {
 		frame.getContentPane().add(tUsuarios);
 		tUsuarios.setColumns(10);
 		
-		JLabel lblNewLabel = new JLabel("");
-		Image img = new ImageIcon(this.getClass().getResource("/iconoStrava.png")).getImage();
-		lblNewLabel.setIcon(new ImageIcon(img));
-		lblNewLabel.setBounds(10, 11, 59, 60);
-		frame.getContentPane().add(lblNewLabel);
-		
-		JLabel lblNewLabel_1 = new JLabel("");
-		Image img2 = new ImageIcon(this.getClass().getResource("/fondo.png")).getImage();
-		lblNewLabel_1.setIcon(new ImageIcon(img2));
-		lblNewLabel_1.setBounds(0, 0, 894, 282);
-		frame.getContentPane().add(lblNewLabel_1);
+//		JLabel lblNewLabel = new JLabel("");
+//		Image img = new ImageIcon(this.getClass().getResource("/iconoStrava.png")).getImage();
+//		lblNewLabel.setIcon(new ImageIcon(img));
+//		lblNewLabel.setBounds(10, 11, 59, 60);
+//		frame.getContentPane().add(lblNewLabel);
+//		
+//		JLabel lblNewLabel_1 = new JLabel("");
+//		Image img2 = new ImageIcon(this.getClass().getResource("/fondo.png")).getImage();
+//		lblNewLabel_1.setIcon(new ImageIcon(img2));
+//		lblNewLabel_1.setBounds(0, 0, 894, 282);
+//		frame.getContentPane().add(lblNewLabel_1);
 		
 		btnLogout.addActionListener(new ActionListener() {
 			
