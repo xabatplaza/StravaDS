@@ -33,6 +33,7 @@ public class registrarse {
 	File file;
 	FileWriter fw;
 	PrintWriter pw;
+	private JTextField textField;
 	/**
 	 * Create the application.
 	 */
@@ -147,6 +148,10 @@ public class registrarse {
 				
 			}
 		});
+		textField = new JTextField();
+		textField.setBounds(37, 269, 171, 25);
+		frame.getContentPane().add(textField);
+		textField.setColumns(10);
 		
 		JButton btnRegisGoogle = new JButton("Registrarse con Google");
 		btnRegisGoogle.setBounds(341, 453, 201, 23);
@@ -167,6 +172,8 @@ public class registrarse {
 		lblNewLabel_2.setIcon(new ImageIcon(img2));
 		lblNewLabel_2.setBounds(0, 0, 688, 540);
 		frame.getContentPane().add(lblNewLabel_2);
+		
+		
 		
 		
 		
@@ -201,7 +208,4 @@ public class registrarse {
 		}
 		return user;
 	}
-	
-	
-
 }
