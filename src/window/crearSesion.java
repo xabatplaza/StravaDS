@@ -1,5 +1,11 @@
 package window;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -11,6 +17,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+
+import ParteUsuario.usuario;
+import Servidor.Entrenamiento;
 
 public class crearSesion extends JFrame {
 	
@@ -29,6 +38,9 @@ public class crearSesion extends JFrame {
 	private JLabel lDeporte = new JLabel("Deporte");
 	private JTextField tHora = new JTextField();
 	private JLabel lHora = new JLabel("Hora de Inicio");
+	File file;
+	FileWriter fw;
+	PrintWriter pw;
 	
 	private JButton btnCrearSesion = new JButton("Crear Sesion");
 	
@@ -65,6 +77,15 @@ public class crearSesion extends JFrame {
 		 panel.add(lDuracion);
 		 panel.add(tDuracion);
 		 
+		 file = new File("sesiones.txt");
+			try {
+				fw = new FileWriter(file,true);
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			pw = new PrintWriter(fw);
+		 
 		 
 	    //Botones funcionamiento
 	    
@@ -81,6 +102,22 @@ public class crearSesion extends JFrame {
 		setResizable(true);
 		setVisible(true);
 		
+	}
+	
+	public Entrenamiento crearSesion(Entrenamiento entrenamiento) {
+		
+			entrenamiento.setTitulo(tTitulo.getText());
+			entrenamiento.setFechaInicio(tFechaInicio.getText());
+			Integer distanciaTest = Integer.parseInt(tDistancia.getText());
+			entrenamiento.setDuracion(tDuracion.getText());
+			entrenamiento.setDeporte(tDeporte.getText());
+			entrenamiento.setHoraInicio(tHora.getText());
+			System.out.println(entrenamiento.toString());
+			System.out.println(entrenamiento.getTitulo());
+			pw.println("Titulo: "+entrenamiento.getTitulo()+ " , Fecha Inicio: " + entrenamiento.getFechaInicio()+ " , Distancia: "+ entrenamiento.getDistancia() +" , Duracion: " + entrenamiento.getDuracion()+ " , Deporte: "+ entrenamiento.getDeporte()+ " , Hora de Inicio: "+ entrenamiento.getHoraInicio());
+			pw.flush();
+			pw.close();
+		return entrenamiento;
 	}
 
 	}
