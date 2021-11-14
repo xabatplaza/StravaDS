@@ -1,1 +1,2 @@
-Nombre: Alejo , Email: alejo@gmail.com , Contraseña: hola , Peso: 70.0 , Altura: 190.0 , Frecuencia Cardiaca Maxima: 10 , Frecuencia Cardiaca en Reposo: 10
+Nombre: xabat , Email: x , Contraseña: a , Peso: 11.0 , Altura: 1.0 , Frecuencia Cardiaca Maxima: 1 , Frecuencia Cardiaca en Reposo: 1
+Nombre: a , Email: a , Contraseña: a , Peso: 1.0 , Altura: 1.0 , Frecuencia Cardiaca Maxima: 1 , Frecuencia Cardiaca en Reposo: 1

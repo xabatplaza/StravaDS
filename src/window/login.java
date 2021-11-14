@@ -131,6 +131,7 @@ public class login {
 				}
 				else {
 					System.out.println("La contraseña o email no coinciden");
+					line = br.readLine();
 				}
 			}
 			br.close();

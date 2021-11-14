@@ -49,7 +49,7 @@ public class registrarse {
 		
 		file = new File("usuarios.txt");
 		try {
-			fw = new FileWriter(file);
+			fw = new FileWriter(file,true);
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();

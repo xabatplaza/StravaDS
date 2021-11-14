@@ -1,5 +1,9 @@
 package ParteUsuario;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
 import Servidor.IServidorRemoto;
 import window.login;
 public class MainCliente {
@@ -16,12 +20,23 @@ public class MainCliente {
 		}
 
 		try {
-			String name = "//" + args[0] + ":" + args[1] + "/" + args[2];
-			IServidorRemoto serviceStub = (IServidorRemoto) java.rmi.Naming.lookup(name);
-			System.out.println("* Message comming from the server: '" + serviceStub.holaServidor() + "'");
-			System.out.println("* Datos clientes: '" + serviceStub.registro() + "'");
-			System.out.println("* Datos login: '" + serviceStub.login() + "'");
-
+			int i =0;
+			BufferedReader br2;
+			String line2 = "";
+			try {
+				br2 = new BufferedReader(new FileReader("usuarios.txt"));			
+				String name = "//" + args[0] + ":" + args[1] + "/" + args[2];
+				IServidorRemoto serviceStub = (IServidorRemoto) java.rmi.Naming.lookup(name);
+				//System.out.println("* Message comming from the server: '" + serviceStub.holaServidor() + "'");
+				serviceStub.registro();
+				serviceStub.loginDatos();
+					
+				br2.close();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		
 		} catch (Exception e) {
 			System.err.println("- Exception running the client: " + e.getMessage());
 			e.printStackTrace();

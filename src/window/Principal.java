@@ -61,7 +61,33 @@ public class Principal {
 				frame.dispose();
 			}
 		});
-		
+		btnCrearReto.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				new crearReto();
+				frame.dispose();
+			}
+		});
+		btnCrearEntrenamiento.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				new crearSesion();
+				frame.dispose();
+			}
+		});
+		btnLogout.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				new Principal();
+				frame.dispose();
+			}
+		});
 		frame.setDefaultCloseOperation(frame.DISPOSE_ON_CLOSE);
 		frame.setResizable(false);
 		frame.setVisible(true);

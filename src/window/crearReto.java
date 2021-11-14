@@ -82,8 +82,6 @@ public class crearReto extends JFrame{
 		setVisible(true);
 		
 }
-	public static void main(String[] args) {
-		crearReto v1  = new crearReto();
-		}
+
 	}
 	
