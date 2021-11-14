@@ -119,17 +119,17 @@ public class login {
 		btnRegistrarse.setBounds(0, 0, 162, 23);
 		panel.add(btnRegistrarse);
 		
-		JLabel lblNewLabel = new JLabel("");
-		Image img = new ImageIcon(this.getClass().getResource("/strava.jpg")).getImage();
-		lblNewLabel.setIcon(new ImageIcon(img));
-		lblNewLabel.setBounds(69, 11, 400, 358);
-		frame.getContentPane().add(lblNewLabel);
-		
-		lblNewLabel_1 = new JLabel("");
-		Image img1 = new ImageIcon(this.getClass().getResource("/iconoStrava.png")).getImage();
-		lblNewLabel_1.setIcon(new ImageIcon(img1));
-		lblNewLabel_1.setBounds(10, 11, 60, 60);
-		frame.getContentPane().add(lblNewLabel_1);
+//		JLabel lblNewLabel = new JLabel("");
+//		Image img = new ImageIcon(this.getClass().getResource("/strava.jpg")).getImage();
+//		lblNewLabel.setIcon(new ImageIcon(img));
+//		lblNewLabel.setBounds(69, 11, 400, 358);
+//		frame.getContentPane().add(lblNewLabel);
+//		
+//		lblNewLabel_1 = new JLabel("");
+//		Image img1 = new ImageIcon(this.getClass().getResource("/iconoStrava.png")).getImage();
+//		lblNewLabel_1.setIcon(new ImageIcon(img1));
+//		lblNewLabel_1.setBounds(10, 11, 60, 60);
+//		frame.getContentPane().add(lblNewLabel_1);
 		btnRegistrarse.addActionListener(new ActionListener() {
 			
 			@Override

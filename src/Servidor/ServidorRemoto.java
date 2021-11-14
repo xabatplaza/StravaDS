@@ -66,7 +66,7 @@ public class ServidorRemoto extends UnicastRemoteObject implements IServidorRemo
 			line2 = br2.readLine();
 			while (line2 != null) {
 				String data[] = line2.split(" ");
-				System.out.println("Se ha registrado un nuevo usuario: Nombre: "+data[1]+" , Email: "+data[4]+" , Contraseña: "+data[7]+ " , Peso: "+data[10] + " , Altura: "+data[13]+" , Frecuencia cardiaca maxima: "+data[18]+ " , Frecuencia cardiaca minima: "+data[24] );
+				System.out.println("Se ha registrado un nuevo usuario: Nombre: "+data[1]+" , Email: "+data[4]+" , Contraseña: "+data[7]+ " , Peso: "+data[10] + " , Altura: "+data[13]+" , Frecuencia cardiaca maxima: "+data[18]+ " , Frecuencia cardiaca minima: "+data[24]+", Fecha de nacimiento: "+data[29] );
 				//result2 = "Se ha logueado el usuario con: "+"Email: "+ data[4]+ " , Contraseña: "+data[7];
 				line2 = br2.readLine();
 			}

@@ -76,7 +76,7 @@ public class registrarse {
 		tEmail.setBounds(37, 182, 171, 25);
 		frame.getContentPane().add(tEmail);
 		
-		JLabel lFechaNac = new JLabel("Fecha de Nacimiento:");
+		JLabel lFechaNac = new JLabel("Fecha de Nacimiento: (dd/MM/aaaa)");
 		lFechaNac.setBounds(37, 233, 184, 25);
 		frame.getContentPane().add(lFechaNac);
 		
@@ -161,20 +161,20 @@ public class registrarse {
 		btnRegisFacebook.setBounds(341, 498, 201, 23);
 		frame.getContentPane().add(btnRegisFacebook);
 		
-		JLabel lblNewLabel = new JLabel("");
-		Image img = new ImageIcon(this.getClass().getResource("/iconoStrava.png")).getImage();
-		lblNewLabel.setIcon(new ImageIcon(img));
-		lblNewLabel.setBounds(10, 11, 60, 60);
-		frame.getContentPane().add(lblNewLabel);
-		
-		JLabel lblNewLabel_2 = new JLabel("");
-		Image img2 = new ImageIcon(this.getClass().getResource("/fondo.png")).getImage();
-		lblNewLabel_2.setIcon(new ImageIcon(img2));
-		lblNewLabel_2.setBounds(0, 0, 688, 540);
-		frame.getContentPane().add(lblNewLabel_2);
-		
-		
-		
+//		JLabel lblNewLabel = new JLabel("");
+//		Image img = new ImageIcon(this.getClass().getResource("/iconoStrava.png")).getImage();
+//		lblNewLabel.setIcon(new ImageIcon(img));
+//		lblNewLabel.setBounds(10, 11, 60, 60);
+//		frame.getContentPane().add(lblNewLabel);
+//		
+//		JLabel lblNewLabel_2 = new JLabel("");
+//		Image img2 = new ImageIcon(this.getClass().getResource("/fondo.png")).getImage();
+//		lblNewLabel_2.setIcon(new ImageIcon(img2));
+//		lblNewLabel_2.setBounds(0, 0, 688, 540);
+//		frame.getContentPane().add(lblNewLabel_2);
+//		
+//		
+//		
 		
 		
 		
@@ -198,9 +198,9 @@ public class registrarse {
 			user.setAltura(fAltura);
 			user.setFrecCardMax(Integer.parseInt(tFrecCardMax.getText()));
 			user.setFrecCardRepo(Integer.parseInt(tFrecCardReposo.getText()));
+			user.setFechaNac(textField.getText());
 			System.out.println(user.toString());
-			System.out.println(user.getNombre());
-			pw.println("Nombre: "+user.getNombre()+ " , Email: " + user.getEmail()+ " , Contraseña: "+ user.getContrasenya() +" , Peso: " + user.getPeso()+ " , Altura: "+ user.getAltura()+ " , Frecuencia Cardiaca Maxima: "+ user.getFrecCardMax()+ " , Frecuencia Cardiaca en Reposo: "+ user.getFrecCardRepo());
+			pw.println("Nombre: "+user.getNombre()+ " , Email: " + user.getEmail()+ " , Contraseña: "+ user.getContrasenya() +" , Peso: " + user.getPeso()+ " , Altura: "+ user.getAltura()+ " , Frecuencia Cardiaca Maxima: "+ user.getFrecCardMax()+ " , Frecuencia Cardiaca en Reposo: "+ user.getFrecCardRepo()+" , Fecha de nacimiento: "+user.getFechaNac());
 			pw.flush();
 			pw.close();
 		}else {
