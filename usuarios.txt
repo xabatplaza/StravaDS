@@ -1,0 +1,1 @@
+Nombre: Alejo , Email: alejo@gmail.com , Contraseña: hola , Peso: 70.0 , Altura: 190.0 , Frecuencia Cardiaca Maxima: 10 , Frecuencia Cardiaca en Reposo: 10
