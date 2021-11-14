@@ -43,6 +43,7 @@ public class crearSesion extends JFrame {
 	PrintWriter pw;
 	
 	private JButton btnCrearSesion = new JButton("Crear Sesion");
+	private JButton btnSalir = new JButton("Salir");
 	
 	JPanel panel = new JPanel();
 	JPanel acciones = new JPanel();
@@ -59,11 +60,12 @@ public class crearSesion extends JFrame {
 		 panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		 add(panel, BorderLayout.CENTER);
 		 
-		 acciones.setLayout(new GridLayout(1,1));
+		 acciones.setLayout(new GridLayout(1,2));
 		 acciones.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		 add(acciones, BorderLayout.NORTH);
 		
 		 acciones.add(btnCrearSesion);
+		 acciones.add(btnSalir);
 		 panel.add(lTitulo);
 		 panel.add(tTitulo);
 		 panel.add(lDeporte);
@@ -92,9 +94,25 @@ public class crearSesion extends JFrame {
 		 btnCrearSesion.addActionListener(new ActionListener() {
 	            @Override
 	            public void actionPerformed(ActionEvent e) {
-	                //Crear sesion
+	            	Entrenamiento entreno = new Entrenamiento();
+	            	entreno.setTitulo(tTitulo.getText());
+	            	entreno.setFechaInicio(tFechaInicio.getText());
+	    			Integer distanciaTest = Integer.parseInt(tDistancia.getText());
+	    			entreno.setDistancia(distanciaTest);
+	    			entreno.setDuracion(tDuracion.getText());
+	    			entreno.setDeporte(tDeporte.getText());
+	    			entreno.setHoraInicio(tHora.getText());
+;	                crearSesion(entreno);
 	            	
 	            
+	            }
+	        });
+		 
+		 btnSalir.addActionListener(new ActionListener() {
+	            @Override
+	            public void actionPerformed(ActionEvent e) {
+	            	 frame.dispose();
+
 	            }
 	        });
 		 
@@ -109,6 +127,7 @@ public class crearSesion extends JFrame {
 			entrenamiento.setTitulo(tTitulo.getText());
 			entrenamiento.setFechaInicio(tFechaInicio.getText());
 			Integer distanciaTest = Integer.parseInt(tDistancia.getText());
+			entrenamiento.setDistancia(distanciaTest);
 			entrenamiento.setDuracion(tDuracion.getText());
 			entrenamiento.setDeporte(tDeporte.getText());
 			entrenamiento.setHoraInicio(tHora.getText());
@@ -118,6 +137,10 @@ public class crearSesion extends JFrame {
 			pw.flush();
 			pw.close();
 		return entrenamiento;
+	}
+	
+	public static void main(String[] args) {
+		crearSesion v3 = new crearSesion();
 	}
 
 	}
