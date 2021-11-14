@@ -23,7 +23,7 @@
     </target>
 
 	<target name="2.client" depends="1.build" description="Runs the Client">
-		<java classname="Usuario.MainCliente" classpathref="full.classpath" fork="true">
+		<java classname="ParteUsuario.MainCliente" classpathref="full.classpath" fork="true">
 			<jvmarg value="-Djava.security.policy=${policy.file}"/>			
         	<arg value="${registry.ip}"/> 
 	 		<arg value="${registry.port}"/> 

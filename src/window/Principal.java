@@ -1,13 +1,16 @@
+package window;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JTextField;
 
 public class Principal {
 
 	private JFrame frame;
+	public final JTextField tUsuarios = new JTextField();
 
 
 	/**
@@ -45,6 +48,9 @@ public class Principal {
 		JButton btnLogout = new JButton("Logout");
 		btnLogout.setBounds(678, 207, 89, 33);
 		frame.getContentPane().add(btnLogout);
+		tUsuarios.setBounds(10, 272, 66, 1);
+		frame.getContentPane().add(tUsuarios);
+		tUsuarios.setColumns(10);
 		
 		btnLogout.addActionListener(new ActionListener() {
 			

@@ -1,6 +1,12 @@
+package window;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -13,7 +19,7 @@ import javax.swing.JButton;
 public class registrarse {
 
 	private JFrame frame;
-	private JTextField tNombre;
+	public JTextField tNombre;
 	private JTextField tEmail;
 	private JTextField tPeso;
 	private JTextField tAltura;
@@ -21,7 +27,10 @@ public class registrarse {
 	private JTextField tFrecCardReposo;
 	private JTextField tContrasenya;
 	private JTextField tRepetirContrasenya;
-	usuario usuario;
+	public usuario usuarioDefinitivo;
+	File file;
+	FileWriter fw;
+	PrintWriter pw;
 	/**
 	 * Create the application.
 	 */
@@ -38,8 +47,14 @@ public class registrarse {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		usuario = new usuario();
-		
+		file = new File("usuarios.txt");
+		try {
+			fw = new FileWriter(file);
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		pw = new PrintWriter(fw);
 		JLabel lNombre = new JLabel("Nombre:");
 		lNombre.setBounds(37, 44, 184, 25);
 		frame.getContentPane().add(lNombre);
@@ -120,30 +135,13 @@ public class registrarse {
 		btnRegistrar.setBounds(341, 408, 104, 23);
 		frame.getContentPane().add(btnRegistrar);
 		
+		usuarioDefinitivo = new usuario();
 		btnRegistrar.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				if (tContrasenya.getText().equals(tRepetirContrasenya.getText())) {
-					usuario.setNombre(tNombre.getText());
-					usuario.setEmail(tEmail.getText());
-					usuario.setContrasenya(tContrasenya.getText());
-					Integer peso = Integer.parseInt(tPeso.getText());
-					float fPeso = peso.floatValue();
-					usuario.setPeso(fPeso);
-					Integer altura = Integer.parseInt(tAltura.getText());
-					float fAltura = altura.floatValue();
-					usuario.setAltura(fAltura);
-					usuario.setFrecCardMax(Integer.parseInt(tFrecCardMax.getText()));
-					usuario.setFrecCardRepo(Integer.parseInt(tFrecCardReposo.getText()));
-					System.out.println(usuario.toString());
-					new Principal();
-					frame.dispose();
-				}else {
-					System.out.println("Error. La contraseña no es igual");
-				}
-
+				crearRegistro(usuarioDefinitivo);
 				
 			}
 		});
@@ -160,7 +158,33 @@ public class registrarse {
 		frame.setResizable(false);
 		frame.setVisible(true);
 		frame.setLocationRelativeTo(null);
+		
 
 	}
+	public usuario crearRegistro(usuario user) {
+		if (tContrasenya.getText().equals(tRepetirContrasenya.getText())) {
+			user.setNombre(tNombre.getText());
+			user.setEmail(tEmail.getText());
+			user.setContrasenya(tContrasenya.getText());
+			Integer peso = Integer.parseInt(tPeso.getText());
+			float fPeso = peso.floatValue();
+			user.setPeso(fPeso);
+			Integer altura = Integer.parseInt(tAltura.getText());
+			float fAltura = altura.floatValue();
+			user.setAltura(fAltura);
+			user.setFrecCardMax(Integer.parseInt(tFrecCardMax.getText()));
+			user.setFrecCardRepo(Integer.parseInt(tFrecCardReposo.getText()));
+			System.out.println(user.toString());
+			System.out.println(user.getNombre());
+			pw.println("Nombre: "+user.getNombre()+ " , Email: " + user.getEmail()+ " , Contraseña: "+ user.getContrasenya() +" , Peso: " + user.getPeso()+ " , Altura: "+ user.getAltura()+ " , Frecuencia Cardiaca Maxima: "+ user.getFrecCardMax()+ " , Frecuencia Cardiaca en Reposo: "+ user.getFrecCardRepo());
+			pw.flush();
+			pw.close();
+		}else {
+			System.out.println("Error. La contraseña no es igual");
+		}
+		return user;
+	}
+	
+	
 
 }

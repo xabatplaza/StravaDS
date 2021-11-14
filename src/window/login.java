@@ -1,10 +1,16 @@
+package window;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.awt.event.ActionEvent;
 
 public class login {
@@ -16,6 +22,9 @@ public class login {
 	private JButton btnIniciarGoogle;
 	private JButton btnIniciarFacebook;
 	private JButton btnRegistrarse;
+	String line;
+	String emailContra;
+	public boolean log;
 
 	/**
 	 * Launch the application.
@@ -48,7 +57,6 @@ public class login {
 		frame.setBounds(100, 100, 562, 419);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		
 		JLabel lEmail = new JLabel("Email");
 		lEmail.setBounds(156, 29, 203, 35);
 		frame.getContentPane().add(lEmail);
@@ -70,11 +78,14 @@ public class login {
 		JButton btnIniciarSesion = new JButton("Iniciar Sesión");
 		btnIniciarSesion.setBounds(75, 247, 146, 23);
 		frame.getContentPane().add(btnIniciarSesion);
+		
 		btnIniciarSesion.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
+				comprobarEmail();
+				frame.dispose();
 				
 			}
 		});
@@ -104,5 +115,29 @@ public class login {
 				frame.dispose();
 			}
 		});
+	}
+	public String comprobarEmail() {
+		BufferedReader br;
+		try {
+			br = new BufferedReader(new FileReader("usuarios.txt"));
+			line = br.readLine();
+			while (line != null) {
+				String data[] = line.split(" ");
+				if(data[4].equals(tEmail.getText()) && data[7].equals(tContrasenya.getText())) {
+					emailContra = tEmail.getText()+" "+tContrasenya.getText();
+					new Principal();
+					log = true;
+					line = br.readLine();
+				}
+				else {
+					System.out.println("La contraseña o email no coinciden");
+				}
+			}
+			br.close();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		return emailContra;
 	}
 }
