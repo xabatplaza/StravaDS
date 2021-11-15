@@ -44,9 +44,9 @@ public class Principal {
 		btnObtenerReto.setBounds(437, 72, 169, 45);
 		frame.getContentPane().add(btnObtenerReto);
 		
-		JButton btnAceptarReto = new JButton("Aceptar Reto");
-		btnAceptarReto.setBounds(657, 72, 169, 45);
-		frame.getContentPane().add(btnAceptarReto);
+//		JButton btnAceptarReto = new JButton("Aceptar Reto");
+//		btnAceptarReto.setBounds(657, 72, 169, 45);
+//		frame.getContentPane().add(btnAceptarReto);
 		
 		JButton btnLogout = new JButton("Logout");
 		btnLogout.setBounds(678, 207, 89, 33);
@@ -102,6 +102,14 @@ public class Principal {
 				// TODO Auto-generated method stub
 				new Principal();
 				frame.dispose();
+			}
+		});
+		btnObtenerReto.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				new verRetos();
 			}
 		});
 		frame.setDefaultCloseOperation(frame.DISPOSE_ON_CLOSE);
