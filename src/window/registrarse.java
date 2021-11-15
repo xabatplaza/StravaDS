@@ -145,6 +145,8 @@ public class registrarse {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				crearRegistro(usuarioDefinitivo);
+				new Principal();
+				frame.dispose();
 				
 			}
 		});

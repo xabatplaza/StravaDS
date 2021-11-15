@@ -30,7 +30,7 @@ public class crearSesion extends JFrame {
 	private JTextField tFechaInicio = new JTextField();
 	private JLabel lFechaInicio = new JLabel("Fecha Inicio");
 	private JTextField tDistancia = new JTextField();
-	private JLabel lDistancia = new JLabel("Distancia");
+	private JLabel lDistancia = new JLabel("Distancia (km)");
 	private JTextField tDuracion = new JTextField();
 	private JLabel lDuracion = new JLabel("Duración");
 	private JTextField tDeporte = new JTextField();

@@ -1,1 +1,5 @@
 Nombre: juan , Email: juans , Contraseña: b , Peso: 12.0 , Altura: 67.0 , Frecuencia Cardiaca Maxima: 11 , Frecuencia Cardiaca en Reposo: 22 , Fecha de nacimiento: 11/11/2002
+Nombre: xabat , Email: xabatplaza , Contraseña: hola , Peso: 80.0 , Altura: 190.0 , Frecuencia Cardiaca Maxima: 140 , Frecuencia Cardiaca en Reposo: 47 , Fecha de nacimiento: 12/11/2001
+Nombre: ander , Email: andermoldes , Contraseña: hola , Peso: 76.0 , Altura: 174.0 , Frecuencia Cardiaca Maxima: 138 , Frecuencia Cardiaca en Reposo: 50 , Fecha de nacimiento: 1/8/2001
+Nombre: alejo , Email: alejoso , Contraseña: hola , Peso: 90.0 , Altura: 200.0 , Frecuencia Cardiaca Maxima: 160 , Frecuencia Cardiaca en Reposo: 50 , Fecha de nacimiento: 1/1/2001
+Nombre: Diego , Email: diegobr , Contraseña: hola , Peso: 90.0 , Altura: 196.0 , Frecuencia Cardiaca Maxima: 145 , Frecuencia Cardiaca en Reposo: 54 , Fecha de nacimiento: 8/3/2001
